@@ -1,0 +1,18 @@
+.main-card{
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        
+        z-index: -99;
+        justify-content: space-between;
+}
+
+#card2{
+    height: auto;
+    width:18rem;
+    padding: 20px;
+}
+
+
+
