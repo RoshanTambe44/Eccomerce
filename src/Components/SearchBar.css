@@ -8,10 +8,13 @@
 
 }
 
-.search-btn{
-     margin-left: 20px;
-     border-radius: 10px;
-     background-color:rgb(133, 133, 170);
-     font-weight: 500px;
-}
 
+
+.input-div {
+    height: 100px;
+    position: sticky;
+    top: 0px;
+    z-index: 99;
+    background-color:rgb(133, 133, 170);
+   
+}

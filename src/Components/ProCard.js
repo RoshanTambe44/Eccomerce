@@ -72,7 +72,7 @@ useEffect(()=>{
 
 
     return (  <div className="main-back">
-              <div><input type="text"  onChange={handler} className="searchbar-input" placeholder="Enter your Product Name "/></div>
+              <div className=" input-div"><input type="text"  onChange={handler} className="searchbar-input" placeholder="Enter your Product Name "/></div>
               <div className="main-card">{
                       Record.map((user)=>(      
                     <div className="card width-20" id="card2" >
