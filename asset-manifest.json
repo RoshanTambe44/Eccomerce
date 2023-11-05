@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/mEccomerce/static/css/main.b0e81928.css",
+    "main.js": "/mEccomerce/static/js/main.9f78e11d.js",
+    "static/media/title.jpg": "/mEccomerce/static/media/title.58439ad82aecd8b254c4.jpg",
+    "static/media/pro2.jpg": "/mEccomerce/static/media/pro2.af53690db1f0215c48e0.jpg",
+    "static/media/pro1.jpg": "/mEccomerce/static/media/pro1.108390d44b86591c9c7e.jpg",
+    "static/media/pro3r.avif": "/mEccomerce/static/media/pro3r.0fcb5a1209518a95522c.avif",
+    "static/media/pro5.avif": "/mEccomerce/static/media/pro5.884b259e7f772c664159.avif",
+    "static/media/pro4.avif": "/mEccomerce/static/media/pro4.7bbc8cdc7713c6cc5d15.avif",
+    "index.html": "/mEccomerce/index.html",
+    "main.b0e81928.css.map": "/mEccomerce/static/css/main.b0e81928.css.map",
+    "main.9f78e11d.js.map": "/mEccomerce/static/js/main.9f78e11d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b0e81928.css",
+    "static/js/main.9f78e11d.js"
+  ]
+}
