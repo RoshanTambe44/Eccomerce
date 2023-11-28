@@ -1,6 +1,21 @@
-import { Link } from "react-router-dom"
+import { useAuth0 } from "@auth0/auth0-react";
+import { useState } from "react";
 
-const Navbar = () => {
+
+
+
+const Navbar = ({productHandlerNav, cartProduct, cartHandler }) => {
+
+    const { loginWithRedirect } = useAuth0();
+    const { logout } = useAuth0();
+    const { user, isAuthenticated } = useAuth0();
+    
+    
+
+
+
+
+
 
     return <div>
                     <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -28,14 +43,18 @@ const Navbar = () => {
                         <li><a className="dropdown-item" href="#">Something else here</a></li>
                     </ul>
                     </li>
-                    <li className="nav-item">
+                    <li className="nav-item ">
                     <a className="nav-link disabled" aria-disabled="true">Disabled</a>
                     </li>
-                </ul>
-                <form className="d-flex" role="search">
-                    <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                    <button className="btn btn-outline-success" type="submit">Search</button>
-                </form>
+                    <li className="nav-item " style={{marginLeft: "10px", marginTop:"6px",color: "green", fontWeight:"700"}}>
+                    {isAuthenticated && user.name}
+                    </li>
+   
+                    </ul>
+                    <form className="d-flex" role="search">
+                     
+                    {isAuthenticated  && <><div className="btn btn-outline-success" onClick={cartHandler} style={{ marginRight :"10px"}} > <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16"><path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/></svg><span className="cart-count">{cartProduct.length}</span></div><button className="btn btn-outline-success" onClick={ productHandlerNav } style={{ marginRight :"10px"}} >Add</button><button className="btn btn-outline-success" onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })} style={{ borderRadius: "10px", fontWeight:"500", fontSize:"13px"  }} >Log Out</button></>  || <button className="btn btn-outline-success" onClick={() => loginWithRedirect()}style={{ borderRadius: "10px", fontWeight:"500", fontSize:"13px"  }} >Log In</button> }
+                    </form>
                 </div>
             </div>
             </nav>

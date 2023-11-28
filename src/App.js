@@ -1,26 +1,47 @@
 import Navbar from "./Components/Navbar";
-import Card from "./Components/Card";
-import Product from "./Components/Product";
-import Carousel from "./Components/Carousel";
-import pro1 from "./Components/Images/pro1.jpg";
-import pro2 from "./Components/Images/pro2.jpg";
-import pro3 from "./Components/Images/pro3r.avif";
-import pro4 from "./Components/Images/pro4.avif";
-import pro5 from "./Components/Images/pro5.avif";
-import thirdPage from "./Components/thirdPage";
+import ProCard from "./Components/ProCard";
+import Cart from "./Components/Cart";
 import "./App.css";
-
+import { useState } from "react";
 
 const App = () =>{
-    return <div><Navbar/>
-                 <Carousel/>
-                <span className="span-class"><Card img= {pro1} name="shoes"  price="500" />
-                <Card img= {pro2} name=" vintage shoes"  price="545"/>
-                <Card img= {pro3} name="shirt"  price="450"/>
-                <Card img= {pro4} name="T-shirt"  price="551"/>
-                <Card img= {pro5} name="T-shirt"  price="600"/></span>
-                <Product/>
-                <thirdPage/>
+    const[prodiv, setProdiv ] = useState(true);
+    const [proRight, setProRight] = useState(true);
+  const [cartProduct, setCartProduct ] = useState(0);
+  const [cartState, setCartState ] = useState(true);
+  
+
+
+
+    
+    
+function cartHandler (){
+
+  setCartState(false)
+  console.log(cartProduct)
+}
+
+  function cutCartHandler (){
+    setCartState(true)
+    setProRight(true)
+  }
+
+    function productHandlerNav(e){
+        e.preventDefault();
+        setProdiv(false); 
+        setProRight(true) 
+    }
+
+    function cutHandler(){
+        setProdiv(true) 
+        setProRight(false)
+    }
+    
+
+    return <div>
+                {cartState === true ? <><Navbar productHandlerNav={productHandlerNav} cartProduct={cartProduct} cartHandler={cartHandler} />
+                <ProCard prodiv={prodiv} setProdiv={setProdiv} cutHandler={cutHandler} setProRight={setProRight} proRight={proRight} setCartProduct={setCartProduct}  /> </>:
+                <Cart cutCartHandler={cutCartHandler} cartProduct={cartProduct}/>}
             </div>
 }
 
