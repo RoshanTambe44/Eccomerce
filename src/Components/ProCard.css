@@ -1,3 +1,16 @@
+:root{
+    --button:#0195DC;
+    --background:#E1E5E8;
+    --smalltexts:#9D9CA1;
+    --bigtexts:#262626;
+}
+
+#btn{
+    background-color: #5ca1e1;
+    border: none;
+    
+}
+
 .main-card{
 
         margin-top: 20px;
@@ -16,6 +29,7 @@
     margin-top: 20px;
     width:18rem;
     padding: 20px;
+    border-radius: 10px;
 }
 
 
@@ -42,24 +56,24 @@
 
 
 .input-div {
-    padding: 40px 20px;
+    padding: 20px 20px;
     height:120vh; 
     width: 20%;
     position: sticky;
     right:  0px;
     top: 0px;
     z-index: 99;
-    background-color:rgb(133, 133, 170);
+    background-color:var(--smalltexts);
     
 }
 
 
 .product-div{
     padding: 20px;
-    margin-top: 15px;
+    margin-top: 20px;
     height: auto;
-    background-color: #ccc;
-    
+    background-color: #fff;
+    border-radius: 10px;
     /* display: flex;
     flex-direction: column; */
 }
@@ -115,7 +129,7 @@
     
     height: 120vh;
     width: 100%;
-    background-color: gray; 
+    background-color:var(--background); 
    overflow-y: scroll;
    overflow-x: hidden;
     
@@ -125,22 +139,26 @@
 .product-add{
     margin-top: 20px;
     height: auto;
-    background-color: #ccc;
+    background-color: var(--background);
     display: flex;
     flex-direction: column;
     justify-content: start;
-    padding: 10px;
+    padding: 15px;
     gap: 10px;
     border-radius: 10px;
+
 }
 
 .cross{
     height: 20px;
     width: 20px;
-    text-align: center;
-    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(161, 158, 158);
     font-weight: 500;
     cursor: pointer;
+    
 }
 
 
@@ -161,4 +179,10 @@
 .right-product-buy {
     margin-left: 10px;
     margin-top: 10px;
+}
+
+.updated-price{
+        border: transparent;
+        background-color: transparent;
+           
 }
